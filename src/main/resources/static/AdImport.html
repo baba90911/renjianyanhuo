@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>学生信息导入</title>
+		<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			body{
+				margin: 0px;
+			}
+			.out-btn{
+				float: right;
+				margin-top: -110px;
+				margin-right: 10px;
+			}
+			.out-btn:hover{
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="out-btn" onclick="logout()">退出登录</button>
+		<header id="header">
+			<div class="logo"><a href="#" style="font-size: 300%">后台管理——学生信息导入</a></div>
+		</header>
+		<section id="main">
+			<div class="inner">
+				<section id="one" class="wrapper style1">
+					<div class="content" >
+							<p align="center" style="font-size: 20px;font-weight: bold;color: #000000;">学生照片导入功能</p>
+							<div>
+								<form style="" class="form-inline" action="http://10.11.139.79:8080/v1/api/admin/studentImages" method="post"
+								 enctype="multipart/form-data" target="iframe">
+									<div class="form-group">
+										<input width="50%" type="file" size="10000" name="uploadify" multiple="true" id="files" />
+									</div>
+									<div class="form-group" onclick="sed()">
+										<input width="30%" id="uploadFiles"  type="submit" value="上传学生照片"></input>
+									</div>
+								</form>
+								<iframe name="iframe" style="display: none;"></iframe>
+								<input type="hidden" id="username" name="username" />
+								<input type="hidden" id="directory" name="directory" />
+							</div>
+							<hr />
+							
+							<br />
+
+							<p align="center" style="font-size: 20px;font-weight: bold;color: #000000;">准考证数据导入功能</p>
+							<input id="sfile" type="file" name="excelfile" style="height:40px">
+							<div align="center">
+								<button class="button alt fit" onclick="importexamData()" style="width:40%;"> 导入准考证数据</button>
+								<button class="button alt fit" onclick="importmodel()" style="width:40%;margin-top: 30px;">导出模板</button>
+							</div>
+							
+							<hr />
+						</div>
+				</section>
+			</div>
+		</section>
+
+		<footer id="footer">
+			<div class="copyright">
+				Copyright ©2011-2013浙江工商大学教务处 版权所有 浙ICP备05073962号 浙公网安备33011802000512号<br /><br />
+				地址:浙江省杭州下沙高教园区学正街18号 邮编：310018 联系电话：(86)571-28877205 28877206 网站管理
+			</div>
+		</footer>
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/AdImport.js"></script>
+	</body>
+	</body>
+</html>

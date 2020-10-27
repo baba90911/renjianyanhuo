@@ -1,0 +1,118 @@
+
+select {
+    text-align-last: center;
+}
+.main{
+	width: 35%;
+    margin: 0px auto 0;
+    padding: 0em 4em 5em;
+}
+.main h1{
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 2.5em;
+    margin: 0 0 0.5em;
+}
+.main select{
+	outline: none;
+	border: 1px solid #FFF;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	padding: 15px 10px;
+	width: 100%;
+	font-size: 1.3em;
+	color: #7e8fad;
+	text-align: center;
+	font-family: 'Syncopate', sans-serif;
+	margin:1.5em 0;
+	}
+.main select option{
+	text-align: center;
+}
+.main input[type="text"],.main input[type="password"]{
+	outline: none;
+    border: 1px solid #FFF;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    padding: 15px 10px;
+    width: 96%;
+    font-size: 1.3em;
+    color: #7e8fad;
+    text-align: center;
+    font-family: 'Syncopate', sans-serif;
+}
+.main input[type="password"]{
+	margin:1.5em 0;
+}
+.main input[type="button"]{
+	outline:none;
+	border:1px solid #000;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-o-border-radius:5px;
+	-ms-border-radius:5px;
+	padding:15px 10px;
+	width:100%;
+	color: #7e8fad;
+	font-size:1.5em;
+	font-family: 'Syncopate', sans-serif;
+	cursor:pointer;
+}
+.main input[type="button"]:hover{
+	background:#FFFFFF;
+	color:#7E8FAD;
+	border: 1px solid #FFF;
+}
+body {
+	background-color: #1e1f23;
+	padding-top: 8rem;
+}
+
+body.is-loading:after {
+	visibility: hidden;
+	opacity: 0;
+}
+
+body:after {
+	-moz-pointer-events: none;
+	-webkit-pointer-events: none;
+	-ms-pointer-events: none;
+	pointer-events: none;
+	-moz-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+	-webkit-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+	-ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+	transition: opacity 1.5s ease-in-out, visibility 1.5s;
+	content: '';
+	background-image: url(../images/bg.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: fixed;
+	display: block;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	visibility: visible;
+	opacity: 1;
+}
+#footer {
+	padding: 2rem 0 0.1rem 0 ;
+	text-align: center;
+}
+#footer .copyright {
+	color: #bbb;
+	font-size: 0.9rem;
+	margin: 0rem 0 2rem 0;
+	padding: 0 1rem;
+	text-align: center;
+}

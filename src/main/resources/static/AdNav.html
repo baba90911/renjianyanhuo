@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/AdNav.css" />
+		<title>后台管理系统</title>
+		<style>
+			.btn{
+				padding: 10px;
+				border-radius: 4px;
+				border: none;
+				cursor: pointer;
+				font-size: medium;
+				background-color: #FFFFFF;
+				margin-top: -20px;
+			}
+			.btn:hover{
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="btn" onclick="logout()">退出登录</button>
+		<header  style=" text-align: center;">
+			<div class="logo">浙江工商大学准考证打印后台管理系统</div>
+		</header>
+		
+		<div id="mn" style="margin-bottom: 500px;">
+				<div id="one" onclick="one()">
+					<h2>学生信息导入</h2>
+					<p>进入该模块，你可以进行对学生的信息导入与照片导入相关操作。</p>
+				</div>
+				<div id="two" onclick="two()">
+					<h2>信息删除与增加</h2>
+					<p>进入该模块，你可以按类别对学生准考证信息进行删除，以及增加所需考试的类别。</p>
+				</div>
+				<div id="three" onclick="three()">
+					<h2>修改与设置</h2>
+					<p>进入该模块，你可以设置准考证打印的起止时间和修改注意事项。</p>
+				</div>
+				<div id="four" onclick="four()">
+					<h2>准考证打印比查询</h2>
+					<p>进入该模块，你可以按类别和类型了解每个模块学生的打印情况</p>
+				</div>
+		</div>
+		<div style="clear:both;"> </div>
+		<footer id="footer" >
+			<div class="copyright" >
+				Copyright ©2011-2013浙江工商大学教务处 版权所有 浙ICP备05073962号 浙公网安备33011802000512号<br /><br />
+				地址:浙江省杭州下沙高教园区学正街18号 邮编：310018 联系电话：(86)571-28877205 28877206 网站管理
+			</div>
+		</footer>
+	</body>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/AdNav.js"></script>
+</html>

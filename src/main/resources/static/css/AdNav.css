@@ -1,0 +1,170 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.out-btn {
+	float: right;
+	padding: 20px;
+	border-radius: 4px;
+	border: none;
+	margin-right: 15px;
+	cursor: pointer;
+	font-size: medium;
+	background-color: #FFFFFF;
+}
+.out-btn:hover{
+	font-weight: bold;
+}
+
+.logo {
+	color: #FFFFFF;
+	font-weight: 700;
+	font-size: 300%;
+	line-height: 200px;
+	text-align: center;
+}
+
+#mn {
+	margin: 0 auto;
+	background-color: #007BFF;
+	width: 90%;
+}
+
+#one {
+	width: 50%;
+	height: 320px;
+	background-color: rgb(244, 244, 244);
+	float: left;
+}
+
+#one>h2 {
+	text-align: center;
+	line-height: 170px;
+}
+
+#one>p {
+	text-align: center;
+}
+
+#one:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+#two {
+	width: 50%;
+	height: 320px;
+	background-color: rgb(30, 31, 35);
+	float: left;
+}
+
+#two>h2 {
+	text-align: center;
+	line-height: 170px;
+	color: rgb(244, 244, 244);
+}
+
+#two>p {
+	text-align: center;
+	color: rgb(244, 244, 244);
+}
+
+#two:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+#three {
+	width: 50%;
+	height: 320px;
+	background-color: rgb(30, 31, 35);
+	float: left;
+	clear: left;
+}
+
+#three>h2 {
+	text-align: center;
+	line-height: 170px;
+	color: rgb(244, 244, 244);
+}
+
+#three>p {
+	text-align: center;
+	color: rgb(244, 244, 244);
+}
+
+#three:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+#four {
+	width: 50%;
+	height: 320px;
+	background-color: rgb(244, 244, 244);
+	float: left;
+}
+
+#four>h2 {
+	text-align: center;
+	line-height: 170px;
+}
+
+#four>p {
+	text-align: center;
+}
+
+#four:hover {
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+body {
+	background-color: #1e1f23;
+	padding-top: 2rem;
+}
+
+body.is-loading:after {
+	visibility: hidden;
+	opacity: 0;
+}
+
+body:after {
+	-moz-pointer-events: none;
+	-webkit-pointer-events: none;
+	-ms-pointer-events: none;
+	pointer-events: none;
+	-moz-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+	-webkit-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+	-ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+	transition: opacity 1.5s ease-in-out, visibility 1.5s;
+	content: '';
+	background-image: url(../images/bg.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: fixed;
+	display: block;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	visibility: visible;
+	opacity: 1;
+}
+
+#footer {
+	padding: 2rem 0 0.1rem 0;
+	text-align: center;
+}
+
+#footer .copyright {
+	color: #bbb;
+	font-size: 0.9rem;
+	margin: 0 0 2rem 0;
+	padding: 0 1rem;
+	text-align: center;
+}

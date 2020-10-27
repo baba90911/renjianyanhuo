@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.ExamMapper">
+
+
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.Exam">
+    <id column="exam_number" jdbcType="VARCHAR" property="examNumber" />
+    <result column="student_number" jdbcType="VARCHAR" property="studentNumber" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="school_name" jdbcType="VARCHAR" property="schoolName" />
+    <result column="shool_code" jdbcType="VARCHAR" property="shoolCode" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="student_name" jdbcType="VARCHAR" property="studentName" />
+    <result column="class_name" jdbcType="VARCHAR" property="className" />
+    <result column="picture_name" jdbcType="VARCHAR" property="pictureName" />
+    <result column="exam_rule" jdbcType="VARCHAR" property="examRule" />
+    <result column="language_name" jdbcType="VARCHAR" property="languageName" />
+    <result column="exam_type" jdbcType="VARCHAR" property="examType" />
+    <result column="is_print" jdbcType="VARCHAR" property="isPrint" />
+    <result column="exam_classroom" jdbcType="VARCHAR" property="examClassroom" />
+    <result column="exam_time" jdbcType="VARCHAR" property="examTime" />
+    <result column="room_number" jdbcType="VARCHAR" property="roomNumber" />
+    <result column="seat_number" jdbcType="VARCHAR" property="seatNumber" />
+    <result column="exam_classroom2" jdbcType="VARCHAR" property="examClassroom2" />
+    <result column="exam_time2" jdbcType="VARCHAR" property="examTime2" />
+    <result column="college" jdbcType="VARCHAR" property="college" />
+    <result column="other1" jdbcType="VARCHAR" property="other1" />
+  </resultMap>
+
+  <resultMap id="ExamNameMap" type="com.example.demo.pojo.result.exam_name">
+    <result column="school_name" jdbcType="VARCHAR" property="schoolName" />
+    <result column="exam_type" jdbcType="VARCHAR" property="examType" />
+    <result column="language_name" jdbcType="VARCHAR" property="languageName" />
+  </resultMap>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from exam
+    where exam_number = #{examNumber,jdbcType=VARCHAR}
+  </delete>
+
+
+
+  <insert id="insert" parameterType="com.example.demo.pojo.Exam">
+    insert into exam (exam_number, student_number, `password`, 
+      school_name, shool_code, sex, 
+      student_name, class_name, picture_name, 
+      exam_rule, language_name, exam_type, 
+      is_print, exam_classroom, exam_time, 
+      room_number, seat_number, exam_classroom2, 
+      exam_time2, college, other1
+      )
+    values (#{examNumber,jdbcType=VARCHAR}, #{studentNumber,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{schoolName,jdbcType=VARCHAR}, #{shoolCode,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{studentName,jdbcType=VARCHAR}, #{className,jdbcType=VARCHAR}, #{pictureName,jdbcType=VARCHAR}, 
+      #{examRule,jdbcType=VARCHAR}, #{languageName,jdbcType=VARCHAR}, #{examType,jdbcType=VARCHAR}, 
+      #{isPrint,jdbcType=VARCHAR}, #{examClassroom,jdbcType=VARCHAR}, #{examTime,jdbcType=VARCHAR}, 
+      #{roomNumber,jdbcType=VARCHAR}, #{seatNumber,jdbcType=VARCHAR}, #{examClassroom2,jdbcType=VARCHAR}, 
+      #{examTime2,jdbcType=VARCHAR}, #{college,jdbcType=VARCHAR}, #{other1,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.pojo.Exam">
+    update exam
+    set student_number = #{studentNumber,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      school_name = #{schoolName,jdbcType=VARCHAR},
+      shool_code = #{shoolCode,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      student_name = #{studentName,jdbcType=VARCHAR},
+      class_name = #{className,jdbcType=VARCHAR},
+      picture_name = #{pictureName,jdbcType=VARCHAR},
+      exam_rule = #{examRule,jdbcType=VARCHAR},
+      language_name = #{languageName,jdbcType=VARCHAR},
+      exam_type = #{examType,jdbcType=VARCHAR},
+      is_print = #{isPrint,jdbcType=VARCHAR},
+      exam_classroom = #{examClassroom,jdbcType=VARCHAR},
+      exam_time = #{examTime,jdbcType=VARCHAR},
+      room_number = #{roomNumber,jdbcType=VARCHAR},
+      seat_number = #{seatNumber,jdbcType=VARCHAR},
+      exam_classroom2 = #{examClassroom2,jdbcType=VARCHAR},
+      exam_time2 = #{examTime2,jdbcType=VARCHAR},
+      college = #{college,jdbcType=VARCHAR},
+      other1 = #{other1,jdbcType=VARCHAR}
+    where exam_number = #{examNumber,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectByStudentAndType" parameterType="map" resultType="com.example.demo.pojo.result.exam_message">
+    select c.picture_url url,exam_number examNumber, student_number studentNumber,school_name schoolName, shool_code shoolCode, sex, student_name studentName,
+    class_name  className, a.picture_name pictureName, b.rule  examRule,b.exam_name examName, language_name languageName, exam_type examType, is_print isPrint, exam_classroom examClassroom,
+    exam_time examTime, room_number roomNumber, seat_number seatNumber, exam_classroom2 examClassroom2, exam_time2 examTime2, college, other1
+    from exam a join rule b on b.category=a.exam_rule join pictures c on c.picture_name=a.picture_name
+    where student_number = #{studentNumber,jdbcType=VARCHAR}  AND exam_type=#{type,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select exam_number, student_number, `password`, school_name, shool_code, sex, student_name,
+    class_name, picture_name, exam_rule, language_name, exam_type, is_print, exam_classroom,
+    exam_time, room_number, seat_number, exam_classroom2, exam_time2, college, other1
+    from exam
+    where exam_number = #{examNumber,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select exam_number, student_number, `password`, school_name, shool_code, sex, student_name, 
+    class_name, picture_name, exam_rule, language_name, exam_type, is_print, exam_classroom, 
+    exam_time, room_number, seat_number, exam_classroom2, exam_time2, college, other1
+    from exam
+  </select>
+
+
+
+  <select id="selectAllStudentCount" resultType="Integer">
+    select count(*) from exam
+  </select>
+
+  <select id="selectAllPrintCount" parameterType="java.lang.String" resultType="Integer">
+    select count(*) from exam where is_print='1'
+  </select>
+
+
+  <select id="selectPrintCountByCategory" parameterType="java.lang.String" resultType="Integer">
+    select count(*) from exam where exam_rule=#{category,jdbcType=VARCHAR} and is_print='1'
+  </select>
+
+  <select id="selectPrintCountByType" parameterType="java.lang.String" resultType="Integer">
+    select count(*) from exam where  exam_type=#{type,jdbcType=VARCHAR} and  is_print='1'
+  </select>
+
+  <select id="selectStudentCountByCategory" parameterType="java.lang.String" resultType="Integer">
+    select count(*) from exam where exam_rule=#{category,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectStudentCountByType" parameterType="java.lang.String" resultType="Integer">
+    select count(*) from exam where  exam_type=#{type,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectByExamNumber" parameterType="java.lang.String"  resultType="Integer">
+        SELECT count(*) FROM exam WHERE exam_number=#{examNumber,jdbcType=VARCHAR}
+    </select>
+
+  <select id="selectTypeByStudentNumber" parameterType="java.lang.String" resultMap="ExamNameMap">
+    select school_name,exam_type,language_name from exam WHERE  student_number=#{studentNumber,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectPasswordByStudent" parameterType="java.lang.String" resultType="java.lang.String">
+    select distinct `password` from exam where  student_number=#{studentNumber,jdbcType=VARCHAR}
+  </select>
+
+
+  <delete id="deleteByCategory" parameterType="java.lang.String"  >
+    delete from exam where  exam_rule=#{category,jdbcType=VARCHAR}
+  </delete>
+
+  <update id="updataPrintByExamNumber" parameterType="java.lang.String">
+    update  exam  set is_print='1' where exam_number=#{examNumber,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectType" resultType="java.lang.String">
+    select DISTINCT exam_type  FROM exam
+  </select>
+
+  <select id="selectByCategory" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select exam_number, student_number, `password`, school_name, shool_code, sex, student_name,
+    class_name, picture_name, exam_rule, language_name, exam_type, is_print, exam_classroom,
+    exam_time, room_number, seat_number, exam_classroom2, exam_time2, college, other1
+    from exam where exam_rule=#{category,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectByType" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select exam_number, student_number, `password`, school_name, shool_code, sex, student_name,
+    class_name, picture_name, exam_rule, language_name, exam_type, is_print, exam_classroom,
+    exam_time, room_number, seat_number, exam_classroom2, exam_time2, college, other1
+    from exam where exam_type=#{type,jdbcType=VARCHAR}
+  </select>
+
+
+  <select id="selectCategoryByTypeAndStudentNumber"  parameterType="map"  resultType="java.lang.String">
+    select  exam_rule from exam where exam_type=#{type,jdbcType=VARCHAR} and student_number=#{studentNumber,jdbcType=VARCHAR}
+  </select>
+
+
+  <update id="updatePictureByPictureName" parameterType="java.lang.String" >
+    update  exam  set other1='1' where picture_name=#{studentnumber,jdbcType=VARCHAR}
+  </update>
+
+
+  <select id="selectPictureNameByCategory" parameterType="java.lang.String" resultType="java.lang.String" >
+    select  picture_name FROM exam where  exam_rule =#{category,jdbcType=VARCHAR}
+  </select>
+</mapper>

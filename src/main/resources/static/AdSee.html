@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>准考证打印比查询</title>
+		<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			body{
+				margin: 0px;
+			}
+			.out-btn{
+				float: right;
+				margin-top: -110px;
+				margin-right: 10px;
+			}
+			.out-btn:hover{
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="out-btn" onclick="logout()">退出登录</button>
+		<header id="header">
+			<div class="logo"><a href="#" style="font-size: 300%">后台管理——准考证打印比查询</a></div>
+		</header>
+		<section id="main">
+			<div class="inner">
+				<section id="one" class="wrapper style1">
+					<div>
+						<br />
+						<div align="center">
+							<p align="center" style="font-size: 20px;font-weight: bold;color: #000000;">全部准考证打印信息百分比</p>
+							<p>所有考生：<a class="a1">00人</a>&emsp;已打印考生：<a class="a11">00人</a>&emsp;打印所占百分比：<a class="a111">00%</a></p>
+							<hr />
+
+							<p align="center" style="font-size: 20px;font-weight: bold;color: #000000;">类别考试准考证打印信息</p>
+							<select class="sel1" style="text-align-last: center;margin-bottom: 10px; width: 40%;" onchange="change1()">
+								<option>---选择类别考试---</option>
+							</select>
+							<p>该类别所有考生：<a class="a2">00人</a>&emsp;已打印考生：<a class="a22">00人</a>&emsp;打印所占百分比：<a class="a222">00%</a></p>
+							<button class="button alt fit" onclick="import1()" style="width: 40%;">导出该类别下考生信息</button>
+							<hr />
+							
+							<p align="center" style="font-size: 20px;font-weight: bold;color: #000000;">具体考试准考证打印信息</p>
+							<select class="sel11" style="text-align-last: center;margin-bottom: 10px;width: 40%;" onchange="change11()">
+								<option>---选择具体考试---</option>
+							</select>
+							<p>该考试下所有考生：<a class="a3">00人</a>&emsp;已打印考生：<a class="a33">00人</a>&emsp;打印所占百分比：<a class="a333">00%</a></p>
+							<button class="button alt fit" onclick="import11()" style="width: 40%;">导出该考试下考生信息</button>
+							<hr />
+						</div>
+						<br />
+						<hr />
+
+					</div>
+
+			</div>
+		</section>
+		</div>
+		</section>
+
+		<footer id="footer">
+			<div class="copyright">
+				Copyright ©2011-2013浙江工商大学教务处 版权所有 浙ICP备05073962号 浙公网安备33011802000512号<br /><br />
+				地址:浙江省杭州下沙高教园区学正街18号 邮编：310018 联系电话：(86)571-28877205 28877206 网站管理
+			</div>
+		</footer>
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+		<script src="js/AdSee.js"></script>
+	</body>
+	</body>
+</html>

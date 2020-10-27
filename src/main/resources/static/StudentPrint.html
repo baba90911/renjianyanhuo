@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/StudentAll.css" />
+		<title></title>
+		<style>
+			#region {
+				width: 595px;
+				height: 842px;
+				background-color: white;
+				margin: 0 auto;
+				margin-top: 0px;
+			}
+			.btn{
+				padding: 10px;
+				border-radius: 4px;
+				border: none;
+				cursor: pointer;
+				font-size: medium;
+				background-color: #FFFFFF;
+				margin-top: -20px;
+			}
+			.btn:hover{
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<button class="btn" onclick="logout()">退出登录</button>
+			<button class="btn" onclick="preview(1)">点击打印</button>
+		</div>
+		<!--startprint1-->
+		<div id="region">
+			<h2 align="center" style="padding-top: 20px;" id="title"></h2>
+			<table border="1" cellspacing="0px" cellpadding="0px"m width="570px" height="760px" align="center">
+				<tr height="5%" >
+					<td style="padding-left: 20px;" id="scname" width="72%"></td>
+					<td rowspan="4" align="center" >
+						<img align="center" style="" width="114px" height="149px" src="" id="stimg"/>
+					</td>
+				</tr>
+				<tr height="5%">
+					<td style="padding-left: 20px;" id="sccode"></td>
+				</tr>
+				<tr height="5%">
+					<td style="padding-left: 20px;" id="laname"></td>
+				</tr>
+				<tr height="5%">
+					<td style="padding-left: 20px;" id="stname"></td>
+				</tr>
+				<tr height="5%">
+					<td style="padding-left: 20px;" id="eacode"></td>
+					<td style="padding-left: 20px;white-space: pre;" id="eanum"></td>
+				</tr>
+				<tr height="5%" id="ea">
+					<td style="padding-left: 20px;" id="eatime"></td>
+					<td style="padding-left: 20px;" id="earoom"></td>
+				</tr>
+				<tr height="5%" id="ea2">
+					<td style="padding-left: 20px;" id="eatime2"> </td>
+					<td style="padding-left: 20px;" id="earoom2"></td>
+				</tr>
+				<tr height="65%">
+					<td colspan="2" style="padding-left: 20px; padding-right: 20px;">
+						<h3 align="center" style="padding-top: 2px;" id="eatitle"> </h3>
+						<p id="earule"></p>
+				</tr>
+			</table>
+		</div>
+		<!--endprint1-->
+		<footer id="footer">
+			<div class="copyright">
+				Copyright ©2011-2013浙江工商大学教务处 版权所有 浙ICP备05073962号 浙公网安备33011802000512号<br /><br />
+				地址:浙江省杭州下沙高教园区学正街18号 邮编：310018 联系电话：(86)571-28877205 28877206 网站管理
+			</div>
+		</footer>
+	</body>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/StudentPrint.js"></script>
+	<script>
+
+	</script>
+</html>

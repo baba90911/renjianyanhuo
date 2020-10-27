@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>学生端登录页面</title>
+		<link rel="stylesheet" href="css/login.css" />
+		<style>
+			::-webkit-input-placeholder {
+				font-size: 20px;
+				opacity:0.3;
+			}  
+			:-moz-placeholder {
+				font-size: 20px;
+				opacity:0.3;  
+			}  
+			::-moz-placeholder {
+				font-size: 20px;
+				opacity:0.3 ;
+			}  
+			:-ms-input-placeholder {
+				font-size: 20px; 
+				opacity:0.3;
+			}  
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<h1>
+				浙江工商大学准考证
+			</h1>
+			<h1>
+				打印系统
+			</h1>
+			<form>
+
+				<input type="text" id="username" ;" style="margin-top: 40px" value="" placeholder="请输入你的学号">
+				<input type="password" value="Password" id="password" onFocus="this.value = '';">
+				<input type="button" value="登录" onclick="toPage()" id="login">
+			</form>
+		</div>
+		<footer id="footer">
+			<div class="copyright">
+				Copyright ©2011-2013浙江工商大学教务处 版权所有 浙ICP备05073962号 浙公网安备33011802000512号<br /><br />
+				地址:浙江省杭州下沙高教园区学正街18号 邮编：310018 联系电话：(86)571-28877205 28877206 &nbsp;&nbsp;&nbsp;&nbsp;<a href="admin.html" style="text-decoration:none;color: white;">后台管理</a>
+			</div>
+		</footer>
+	</body>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/StudentLogin.js"></script>
+	<script>
+		
+	</script>
+</html>

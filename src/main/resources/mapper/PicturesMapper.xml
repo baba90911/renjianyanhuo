@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PicturesMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.Pictures">
+    <id column="picture_name" jdbcType="VARCHAR" property="pictureName" />
+    <result column="picture_url" jdbcType="VARCHAR" property="pictureUrl" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from pictures
+    where picture_name = #{pictureName,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.example.demo.pojo.Pictures">
+    insert into pictures (picture_name, picture_url)
+    values (#{pictureName,jdbcType=VARCHAR}, #{pictureUrl,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.pojo.Pictures">
+    update pictures
+    set picture_url = #{pictureUrl,jdbcType=VARCHAR}
+    where picture_name = #{pictureName,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select picture_name, picture_url
+    from pictures
+    where picture_name = #{pictureName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select picture_name, picture_url
+    from pictures
+  </select>
+</mapper>

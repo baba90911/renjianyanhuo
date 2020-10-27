@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.RuleMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.Rule">
+    <id column="category" jdbcType="VARCHAR" property="category" />
+    <result column="rule" jdbcType="VARCHAR" property="rule" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="exam_name" jdbcType="VARCHAR" property="examName" />
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from rule
+    where category = #{category,jdbcType=VARCHAR}
+  </delete>
+
+  <insert id="insert" parameterType="com.example.demo.pojo.Rule">
+    insert into rule (category, `rule`, start_time,
+      end_time,exam_name)
+    values (#{category,jdbcType=VARCHAR}, #{rule,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP},
+      #{endTime,jdbcType=TIMESTAMP},#{examName,jdbcType=VARCHAR})
+  </insert>
+
+  <update id="updateByPrimaryKey" parameterType="com.example.demo.pojo.Rule">
+    update rule
+    set `rule` = #{rule,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      exam_name = #{examName,jdbcType=VARCHAR},
+    where category = #{category,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select category, `rule`, start_time, end_time,exam_name
+    from rule
+    where category = #{category,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select category, `rule`, start_time, end_time,exam_name
+    from rule
+  </select>
+
+
+  <select id="selectCategories"  resultType="java.lang.String">
+    select category from rule
+  </select>
+
+  <update id="updateRuleByCategory" parameterType="map" >
+    update rule set `rule` =#{rule,jdbcType=VARCHAR} where category = #{category,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectRuleByCategory" parameterType="java.lang.String" resultType="java.lang.String">
+    select `rule` from rule where category =#{category,jdbcType=VARCHAR}
+  </select>
+
+  <update id="updateStartTimeByCategory" parameterType="map">
+    update rule set start_time=#{startTime,jdbcType=TIMESTAMP} where category = #{category,jdbcType=VARCHAR}
+  </update>
+
+  <update id="updateEndTimeByCategory" parameterType="map">
+    update rule set end_time=#{endTime,jdbcType=TIMESTAMP} where category = #{category,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

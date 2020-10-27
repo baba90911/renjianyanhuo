@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/StudentAll.css" />
+		<title>选择考试页面</title>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.out-btn {
+				padding: 10px;
+				border-radius: 4px;
+				border: none;
+				cursor: pointer;
+				font-size: medium;
+				background-color: #FFFFFF;
+				position: absolute;
+				margin-top: -20px;
+			}
+			.out-btn:hover{
+				font-weight: bold;
+			}
+			.slogo{
+				color: #FFFFFF;
+				font-size: 270%;
+				line-height: 200px;
+				text-align: center;
+			}
+			#selexam{
+				margin: 0 auto;
+				background-color: #007BFF;
+				width: 90%;
+			}
+			#select{
+				background-color: rgb(244, 244, 244);
+				float: left;
+				height: 100px;
+				width: 100%;
+			}
+			#select>select{
+				padding: 10px;
+				width: 50%;
+				text-align-last: center;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="out-btn" onclick="logout()">退出登录</button>
+		<header  style=" text-align: center;">
+			<div class="slogo">检测到你有下列考试</div>
+		</header>
+		
+		<div id="selexam" style="margin-bottom: 500px;">
+			<div id="select" align="center" style="line-height: 100px;">
+				<select id="sel" onchange="change()" style="font-size: large;font-weight: bold">
+				</select>
+			</div>
+				<div id="seone" onclick="">
+					<h2 id="title">---点击上方下拉框选择考试---</h2>
+					<p style="font-size: large;" id="titlep" hidden="hidden">点击进入,打印准考证</p> 
+					<p style="font-size: large;color: red;" id="titlep1" hidden="hidden">该考试打印时间已过！！！</p> 
+					<p style="font-weight: lighter;font-size: small;" id="titlepp">如果您的信息有误，或操作出现异常，请联系学校教务处运行中心（综合楼307室）！</p>
+				</div>
+				
+		</div>
+		<div style="clear:both;"> </div>
+		<footer id="footer" >
+			<div class="copyright" >
+				Copyright ©2011-2013浙江工商大学教务处 版权所有 浙ICP备05073962号 浙公网安备33011802000512号<br /><br />
+				地址:浙江省杭州下沙高教园区学正街18号 邮编：310018 联系电话：(86)571-28877205 28877206 网站管理
+			</div>
+		</footer>
+	</body>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/StudentHome.js"></script>
+</html>

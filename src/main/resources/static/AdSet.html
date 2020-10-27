@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>修改与设置</title>
+		<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			body{
+				margin: 0px;
+			}
+			.out-btn{
+				float: right;
+				margin-top: -110px;
+				margin-right: 10px;
+			}
+			.out-btn:hover{
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="out-btn" onclick="logout()">退出登录</button>
+		<header id="header">
+			<div class="logo"><a href="#" style="font-size: 300%">后台管理——修改与设置</a></div>
+		</header>
+		<section id="main">
+			<div class="inner">
+				<section id="one" class="wrapper style1">
+					<div class="content" align="center">
+							<p align="center" style="font-size: 20px;font-weight: bold;color: #000000;">修改注意事项</p>
+							<select class="sel" style="text-align-last: center;margin-bottom: 10px;width: 80%;" onchange="showrule()">
+								<option>---选择考试类别---</option>
+							</select>
+							<textarea class="tet" placeholder="请输入注意事项(条与条之间注意使用中文分号隔开)" rows="10" style="width: 80%;"></textarea>
+							<button style="margin-top: 10px;width: 80%;" class="button alt fit" onclick="modify()">确认修改</button>
+							<hr />
+							
+							<br />
+							
+							<p align="center" style="font-size: 20px;font-weight: bold;color: #000000;">设置准考证打印起止时间</p>
+							<select class="sel2" style="text-align-last: center;margin-bottom: 10px;width: 80%;">
+								<option>---选择考试类别---</option>
+							</select>
+							<div class="container" style="margin-left:100px ;">
+								<form action="" class="form-horizontal" role="form">
+									<fieldset>
+										<div class="form-group">
+											<label for="dtp_input1" class="col-md-2 control-label">开始时间</label>
+											<div id="start" class="input-group date form_datetime col-md-5" data-date="2019-09-01T00:00:00Z"
+											 data-date-format="yyyy-MM-dd HH:mm:ss" data-link-field="dtp_input1">
+												<input id="s1" class="form-control" size="16" type="text" value="" readonly>
+												<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+												<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+											</div>
+											<input type="hidden" id="dtp_input1" value="" /><br />
+										</div>
+										<div class="form-group">
+											<label for="dtp_input1" class="col-md-2 control-label">结束时间</label>
+											<div id="end" class="input-group date form_datetime col-md-5" data-date="2019-09-01T00:00:00Z"
+											 data-date-format="yyyy-MM-dd HH:mm:ss" data-link-field="dtp_input1">
+												<input id="e1" class="form-control" size="16" type="text" value="" readonly>
+												<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+												<span class="input-group-addon" onclick="ref()"><span class="glyphicon glyphicon-th"></span></span>
+											</div>
+											<input type="hidden" id="dtp_input1" value="" /><br />
+										</div>
+									</fieldset>
+								</form>
+							</div>
+							<button style="margin-top: 10px; width: 10%;" class="button alt fit" onclick="set()">设置</button>
+						</div>
+				</section>
+			</div>
+		</section>
+
+		<footer id="footer">
+			<div class="copyright">
+				Copyright ©2011-2013浙江工商大学教务处 版权所有 浙ICP备05073962号 浙公网安备33011802000512号<br /><br />
+				地址:浙江省杭州下沙高教园区学正街18号 邮编：310018 联系电话：(86)571-28877205 28877206 网站管理
+			</div>
+		</footer>
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="./js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+		<script src="js/AdSet.js"></script>
+		<script type="text/javascript">
+			$('.form_datetime').datetimepicker({
+				format: "yyyy-mm-dd HH:ii:ss",
+				language: "zh-CN",
+				weekStart: 1,
+				todayBtn: 1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				forceParse: 0,
+				showMeridian: 1
+			});
+			$('.form_date').datetimepicker({
+				weekStart: 1,
+				todayBtn: 1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 2,
+				minView: 2,
+				forceParse: 0
+			});
+			$('.form_time').datetimepicker({
+				weekStart: 1,
+				todayBtn: 1,
+				autoclose: 1,
+				todayHighlight: 1,
+				startView: 1,
+				minView: 0,
+				maxView: 1,
+				forceParse: 0
+			});
+
+			function ref() {
+				$('#end').datetimepicker('setStartDate', $("#s1").val());
+			}
+		</script>
+	</body>
+	</body>
+</html>
+
